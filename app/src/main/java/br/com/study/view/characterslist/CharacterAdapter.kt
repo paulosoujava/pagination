@@ -21,7 +21,7 @@ class CharacterAdapter(): RecyclerView.Adapter<CharacterAdapter.VH>(){
     override fun onBindViewHolder(holder: VH, pos: Int) {
         val character = items[pos]
         holder.txtName.text = character.name
-        holder.imgThumnail.load( "${character.thumbnails.path}/standard_medium.${character.thumbnails.extension}")
+        holder.imgThumnail?.load( "${character.thumbnail.path}/standard_medium.${character.thumbnail.extension}")
     }
 
     override fun getItemCount(): Int = items.size

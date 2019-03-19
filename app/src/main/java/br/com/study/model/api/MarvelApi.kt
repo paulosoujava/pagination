@@ -16,7 +16,7 @@ import retrofit2.http.Query
 import java.util.*
 
 interface MarvelApi {
-    @GET("character")
+    @GET("characters")
     fun allCharacters(@Query("offset") offset: Int? = 0): Observable<Response>
 
     companion object {
@@ -42,7 +42,7 @@ interface MarvelApi {
 
             val gson = GsonBuilder().setLenient().create()
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://gateway.marvel.com/v1/public/")
+                .baseUrl("https://gateway.marvel.com:443/v1/public/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(httpClient.build())
