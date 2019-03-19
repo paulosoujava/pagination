@@ -1,2 +1,2 @@
-# Study About Paginatio
+# Study About Pagination
 Pagination in Android
